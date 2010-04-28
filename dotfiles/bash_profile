@@ -60,6 +60,7 @@ export WINE_PREFIX=$HOME/.wine
 ###############################################################################
 # Bash
 ###############################################################################
+export DISPLAY=:0
 export PATH=$HOME/bin:/sbin:$PATH
 export PATH=$M2_HOME/bin:$GEM_HOME/bin:$DEPOT_TOOLS_HOME:$PATH
 source $HOME/.bash_aliases

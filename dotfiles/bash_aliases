@@ -10,6 +10,12 @@ alias less='less -r'
 alias grep='grep --color'
 alias mkdir='mkdir -p'
 alias scpr='rsync --partial --progress --rsh=ssh'
+alias trim="sudo rename 's/ /_/g' * && sudo rename 's/_-_/-/' *"
+alias mounts="mount /media/{noel,tager,litchi,nu13}; mount"
+alias umounts="umount /media/{noel,tager,litchi,nu13}; mount"
+alias chownm='sudo chown media.media'
+alias chmodd='sudo chmod 755'
+alias chmodf='sudo chmod 644'
 
 ################################################################################
 # Development
