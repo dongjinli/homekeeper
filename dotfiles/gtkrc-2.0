@@ -2,13 +2,13 @@
 include "/usr/share/themes/Raleigh/gtk-2.0/gtkrc"
 
 style "user-font" {
-	font_name = "Sans 14"
+	font_name = "Sans 9"
 }
 
 widget_class "*" style "user-font"
 
-gtk-font-name="Sans 14"
+gtk-font-name="Sans 9"
 
-include "/home/minhuang/.gtkrc.mine"
+include "/home/view/.gtkrc.mine"
 
 # -- THEME AUTO-WRITTEN DO NOT EDIT
