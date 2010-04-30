@@ -16,6 +16,7 @@ alias umounts="umount /media/{noel,tager,litchi,nu13}; mount"
 alias chownm='sudo chown media.media'
 alias chmodd='sudo chmod 755'
 alias chmodf='sudo chmod 644'
+alias m='mplayer -fs'
 
 ################################################################################
 # Development
