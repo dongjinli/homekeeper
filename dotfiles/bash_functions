@@ -38,6 +38,20 @@ function xpcshell {
 ################################################################################
 # Other
 ################################################################################
+function mounts {
+  for I in tager litchi nu13 noel; do
+    sudo mount /media/$I
+  done
+  mount
+}
+
+function umounts {
+  for I in tager litchi nu13 noel; do
+    sudo umount /media/$I
+  done
+  mount
+}
+
 function termname {
   echo -ne "\033]0;$@\007"
 }
