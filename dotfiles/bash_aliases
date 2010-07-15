@@ -15,6 +15,7 @@ alias chownm='sudo chown media.media'
 alias chmodd='sudo chmod 755'
 alias chmodf='sudo chmod 644'
 alias m='mplayer -fs'
+alias uc='sudo update-alternatives --config'
 
 ################################################################################
 # Development

@@ -1,11 +1,7 @@
 ###############################################################################
-# Personal
-###############################################################################
-PES_JAR=$HOME/proj/lousycoder/pes/target/pes-*.jar
-
-###############################################################################
 # Java
 ###############################################################################
+PES_JAR=$HOME/proj/lousycoder/pes/target/pes-*.jar
 export ANT_OPTS="-Xms1024M -Xmx1024M"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export JDK_HOME=/usr
@@ -15,7 +11,6 @@ export M2_HOME=$HOME/opt/maven
 export M2_REPO=$HOME/.m2/repository
 export NB_HOME=$HOME/opt/netbeans
 export CLASSPATH=.:$PES_JAR:$CLASSPATH
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH:$JAVA_LIB:$CLASSPATH
 
 ###############################################################################
 # Scala
@@ -27,6 +22,7 @@ export SBT_HOME=$HOME/opt/sbt
 # Ruby
 ###############################################################################
 export RUBY_HOME=/usr
+export RUBYOPT=rubygems
 export GEM_HOME=/var/lib/gems/1.8
 
 ###############################################################################
@@ -56,6 +52,14 @@ export GIT=lousycod@lousycoder.com:/home/lousycod/local/share/git
 export GIT_EDITOR=vi
 export SVN_EDITOR=vi
 export WINE_PREFIX=$HOME/.wine
+
+###############################################################################
+# Wmii
+###############################################################################
+WMII_IS_RUNNING=`ps a | grep wmii | awk '/[^"grep"] wmii$/'`
+if [ -n "$WMII_IS_RUNNING" ]; then
+  PROMPT_COMMAND='dirs | wmiir write /client/sel/label'
+fi
 
 ###############################################################################
 # Bash
