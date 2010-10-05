@@ -1,20 +1,19 @@
 ###############################################################################
 # Java
 ###############################################################################
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export ANT_OPTS="-Xms1024M -Xmx1024M"
+export ANT_OPTS="-Xms512M -Xmx1024M -XX:MaxPermSize=1024M"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-export IDEA_JDK=$JAVA_HOME
-export JDK_HOME=$JAVA_HOME
 export JAVA_COMPILER=jitc
-export M2_HOME=$HOME/opt/maven
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export JDK_HOME=$JAVA_HOME
+export M2_HOME=/usr/share/maven2
 export M2_REPO=$HOME/.m2/repository
 export NB_HOME=$HOME/opt/netbeans
 
 ###############################################################################
 # Scala
 ###############################################################################
-export SCALA_HOME=/usr
+export SCALA_HOME=$HOME/opt/scala
 export SBT_HOME=$HOME/opt/sbt
 
 ###############################################################################
@@ -37,19 +36,11 @@ export DEBEMAIL="Min Huang <min.huang@alumni.usc.edu>"
 export DEBFULLNAME="Min Huang"
 
 ###############################################################################
-# Browser Extensions
-###############################################################################
-export XULRUNNER_HOME=/usr/lib/xulrunner-1.9.1
-export DEPOT_TOOLS_HOME=$HOME/proj/google/depot-tools
-export GYP_GENERATORS=make
-export LD_LIBRARY_PATH=$XUL_RUNNER_HOME:$LD_LIBRARY_PATH
-
-###############################################################################
 # Other
 ###############################################################################
-export GIT=lousycod@lousycoder.com:/home/lousycod/local/share/git
 export GIT_EDITOR=vi
 export SVN_EDITOR=vi
+export EDITOR=vi
 export WINE_PREFIX=$HOME/.wine
 
 ###############################################################################
@@ -57,7 +48,6 @@ export WINE_PREFIX=$HOME/.wine
 ###############################################################################
 export DISPLAY=:0
 export PATH=$HOME/bin:/sbin:$PATH
-export PATH=$M2_HOME/bin:$GEM_HOME/bin:$DEPOT_TOOLS_HOME:$PATH
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
 if [ -e $HOME/.bash_local ]; then

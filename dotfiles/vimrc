@@ -1,3 +1,4 @@
+set nocompatible
 set fileencoding=utf-8
 set termencoding=utf-8
 set autoindent
@@ -21,7 +22,6 @@ set list
 set listchars=tab:│\ ,trail:·
 "set mouse=a
 set nobackup
-set nocompatible
 set noerrorbells
 set nofoldenable
 set novisualbell
@@ -69,23 +69,29 @@ map <silent> <F5>
       \ elseif &textwidth > 0 <Bar>
       \   let w:long_line_match = matchadd('OverColLimit', '\%>'.&tw.'v.\+', -1) <Bar>
       \ else <Bar>
-      \   let w:long_line_match = matchadd('OverColLimit', '\%>85v.\+', -1) <Bar>
+      \   let w:long_line_match = matchadd('OverColLimit', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
-map <F12> :wincmd n<CR>:exe ":0r!find . -type f -not -path './.*'"<CR>1G:set buftype=nofile<CR>:res<CR>
+map <F12> :wincmd n<CR>:exe ":0r!find . -type f -not -path './.*' -not -name '*.swp'"<CR>1G:set buftype=nofile<CR>:res<CR>
 
 " Normal mode mappings (same as nnoremap)
 "   Convenience mappings for resizing vertical splits
 nmap ] <C-W>>
 nmap [ <C-W><
+nmap ; :
+nmap ,/ :let @/=""<CR>
 nmap ,cd :cd %:p:h<CR>
 nmap ,d :bd<CR>:res<CR>
-nmap <silent> ,t :!ctags --append=yes -R * &<CR>
+nmap ,f <C-W>f:res<CR>
+nmap ,g :FindFile<CR>
 nmap ,h :set hlsearch!<CR>
 nmap ,n :set number!<CR>
-nmap ,w :set wrap!<CR>
+nmap ,q :q!<CR>:res<CR>
 nmap ,r :res<CR>
-nmap ,f <C-W>f:res<CR>
-nmap ,x :wq<CR>
+"nmap ,s " Used by slime.vim
+nmap <silent> ,t :!ctags -R * &<CR>:FindFileCacheClear<CR>:FindFileCache .<CR><CR>
+"nmap ,v " Used by slime.vim
+nmap ,w :set wrap!<CR>
+"nmap ,x " Used by slime.vim
 
 " Insert mode mappings (same as inoremap)
 "   When an auto-complete menu is presented, the first item is selected by
@@ -102,6 +108,13 @@ highlight OverColLimit ctermbg=darkblue
 
 " Highlight all trailing whitespace
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\s\+$', -1)
+
+" VimClojure
+let vimclojure#NailgunClient = "$HOME/opt/vimclojure/ng"
+let clj_want_gorilla = 1
+
+" Source slime.vim to allow for SLIME like functionality
+source $HOME/.vim/slime.vim
 
 " Source project specific vim stuff if it exists
 set secure
