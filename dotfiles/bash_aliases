@@ -19,8 +19,5 @@ alias uc='sudo update-alternatives --config'
 alias pdebuildi='pdebuild --use-pdebuild-internal --auto-debsign --debsign-k 5DB05144'
 alias pbuilderlogin='sudo pbuilder login --save-after-login'
 alias mtop='ps auxf | sort -nr -k 4 | head -10'
-
-################################################################################
-# Development
-################################################################################
-alias scala='rlwrap scala -deprecation -Xmigration'
+alias clip='xclip -o -selection clipboard'
+alias sync-podcasts='rsync --archive --delete --verbose ~/data/podcasts/* /media/disk/MUSIC/PODCASTS/'
