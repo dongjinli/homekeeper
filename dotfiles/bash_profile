@@ -6,7 +6,7 @@ export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export JAVA_COMPILER=jitc
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 export JDK_HOME=$JAVA_HOME
-export M2_HOME=/usr/share/maven2
+export M2_HOME=$HOME/opt/maven
 export M2_REPO=$HOME/.m2/repository
 export NB_HOME=$HOME/opt/netbeans
 
@@ -58,4 +58,8 @@ source $HOME/.bash_functions
 if [ -e $HOME/.bash_local ]; then
   source $HOME/.bash_local
 fi
+if [ -e $HOME/.ssh/agent ]; then
+  source $HOME/.ssh/agent
+fi
+eval $(dircolors -b $HOME/.dircolors)
 promptcolors
