@@ -1,7 +1,7 @@
 ################################################################################
 # General
 ################################################################################
-alias ls='ls -hF --group-directories-first --color=auto --hide=Desktop --hide=opt --hide=proj --hide=gmotedata'
+alias ls='ls -hF --group-directories-first --color=auto'
 alias ll='ls -lhF --color=auto'
 alias l='ll'
 alias la='ls -AhF --color=auto'
@@ -15,9 +15,6 @@ alias chownm='sudo chown media.media'
 alias chmodd='sudo chmod 755'
 alias chmodf='sudo chmod 644'
 alias m='mplayer -fs'
-alias uc='sudo update-alternatives --config'
-alias pdebuildi='pdebuild --use-pdebuild-internal --auto-debsign --debsign-k 5DB05144'
-alias pbuilderlogin='sudo pbuilder login --save-after-login'
 alias mtop='ps auxf | sort -nr -k 4 | head -10'
 alias clip='xclip -o -selection clipboard'
 alias sync-podcasts='rsync --archive --delete --verbose ~/data/podcasts/* /media/disk/MUSIC/PODCASTS/'
