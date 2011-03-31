@@ -1,2 +1,0 @@
-#!/bin/sh
-exec touchrotate LVDS1 16 normal
