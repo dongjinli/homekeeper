@@ -1,3 +1,4 @@
+export MAILCHECK=NO
 export GIT_EDITOR=vi
 export SVN_EDITOR=vi
 export EDITOR=vi
