@@ -10,6 +10,7 @@ autocmd BufNewFile,BufRead *.sst setf html
 
 " java
 autocmd BufWritePost .java silent! !ctags -R --exclude=target * &
+autocmd FileType java setlocal completefunc=javacomplete#Complete
 
 " javascript
 autocmd BufNewFile,BufRead *.js,*.jsm,*.json setf javascript
@@ -26,6 +27,10 @@ autocmd BufWritePost .rb silent! !ctags -R * &
 " scala
 autocmd BufNewFile,BufRead *.scala setf scala
 autocmd BufWritePost .scala silent! !ctags -R --exclude=target * &
+
+" scheme
+autocmd BufNewFile,BufRead *.scm,*.rkt setf scheme
+autocmd filetype lisp,scheme,racket,art setlocal equalprg=indent-lisp
 
 " sh
 autocmd BufNewFile,BufRead .pbuilderrc,pbuilderrc setf sh
