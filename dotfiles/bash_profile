@@ -22,6 +22,7 @@ export MAILCHECK=NO
 export PATH=$HOME/bin:\
 $JAVA_HOME/bin:\
 $M2_HOME/bin:\
+$HOME/.gem/ruby/1.9.1/bin:\
 /usr/local/bin:\
 /usr/bin:\
 /bin:\
