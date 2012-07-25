@@ -20,18 +20,18 @@ set indentexpr=
 set infercase
 set laststatus=2
 set lazyredraw
+set list
 set listchars=tab:│\ ,trail:·
 set modelines=0
+set mouse=
 set nobackup
 set noerrorbells
 set nofoldenable
-set nolist
 set novisualbell
 set number
 set pastetoggle=<F1>
 set ruler
 set selection=inclusive
-set selectmode=mouse
 set shiftwidth=2
 set showcmd
 set showmode
@@ -40,39 +40,30 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=2
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set t_Co=256
+set t_vb=
 set tabstop=2
 set ttyfast
 set wildmenu
 set wildchar=<tab>
-set wildignore=*.class,*.o,*.obj,*.bak,*.exe,*.jpg,*.png,*.gif,*.jar,*/.git/*,*/.hg/*,*/.svn/*
+set wildignore=*.class,*.o,*.obj,*.bak,*.exe,*.jpg,*.png,*.gif,*.jar,*/.git/*,*/.hg/*,*/.svn/*,*/target/*,*.swp,*.swo,*~
 set wildmode=list:longest
 
 let mapleader=","
-let g:Tb_SplitBelow=1
-let g:Tb_MaxSize=0
-let g:Tb_MoreThanOne=2
-let g:ctrlp_map='<c-o>'
+let g:ctrlp_map='<c-t>'
+let g:ctrlp_working_path_mode=2
 
 call pathogen#infect()
 
 syntax on
 filetype plugin indent on
-colorscheme delek
+colorscheme jellybeans
 
 " Mappings
-"   Toggle highlighting of really long lines
-map <silent> <F11>
-      \ :if exists('w:long_line_match') <Bar>
-      \   silent! call matchdelete(w:long_line_match) <Bar>
-      \   unlet w:long_line_match <Bar>
-      \ elseif &textwidth > 0 <Bar>
-      \   let w:long_line_match = matchadd('OverColLimit', '\%>'.&tw.'v.\+', -1) <Bar>
-      \ else <Bar>
-      \   let w:long_line_match = matchadd('OverColLimit', '\%>80v.\+', -1) <Bar>
-      \ endif<CR>
 "   Remove all trailing whitespace
-map <silent> <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+map <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<cr>
+"   Open/close the taglist
+map <silent> <F7> :TlistToggle<cr>
 
 " Normal mode mappings (same as nnoremap)
 nmap ; :
@@ -80,20 +71,24 @@ nmap / /\v
 nmap j gj
 nmap k gk
 nmap <tab> %
-nmap <c-n> :Tbbn<cr>
-nmap <c-p> :Tbbp<cr>
+nmap <c-n> :bnext<cr>
+nmap <c-p> :bprev<cr>
 nmap <leader><tab> :Scratch<cr>
 " nmap <leader>b (used by camecasemotion)
 nmap <leader>cd :cd %:p:h<cr>
 nmap <leader>d :bd<cr>:syn on<cr>
 nmap <leader>e :set expandtab! list!<cr>
+nmap <leader>g <c-]>
 nmap <leader>h <c-w>h<cr>
 nmap <leader>j <c-w>j<cr>
 nmap <leader>k <c-w>k<cr>
 nmap <leader>l <c-w>l<cr>
+nmap <leader>n :Tbbn<cr>
+nmap <leader>p :Tbbp<cr>
 nmap <leader>r :res<cr>
 " nmap <leader>s (used by slime.vim)
 nmap <silent> <leader>t :!ctags -R * &<cr><cr>
+nmap <leader>u :set number!<cr>
 nmap <leader>v V`]
 " nmap <leader>w (used by camelcasemotion)
 nmap <leader>q :q!<cr>
@@ -120,7 +115,7 @@ imap <expr> <m-,> pumvisible() ? '<c-n>' :
 imap <nul> <c-x><c-u><c-p>
 
 " Highlight really long lines
-highlight OverColLimit ctermbg=darkblue
+highlight ColorColumn ctermbg=darkblue
 
 " Highlight all trailing whitespace
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\s\+$', -1)
