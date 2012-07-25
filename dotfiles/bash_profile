@@ -5,13 +5,9 @@ export EDITOR=vi
 export WINE_PREFIX=$HOME/.wine
 
 # Bash
-export PATH=$HOME/bin:$M2_HOME/bin:$GEM_HOME/bin:$SCALA_HOME/bin:/sbin:$PATH
+export PATH=$HOME/bin:$PATH
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
-source $HOME/.xinitrc
-if [ -e $HOME/.bash_local ]; then
-  source $HOME/.bash_local
-fi
 if [ -e $HOME/.ssh/agent ]; then
   source $HOME/.ssh/agent
 fi
