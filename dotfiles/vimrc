@@ -60,6 +60,16 @@ filetype plugin indent on
 colorscheme jellybeans
 
 " Mappings
+"   Toggle highlighting of really long lines
+map <silent> <F5>
+      \ :if exists('w:long_line_match') <Bar>
+      \   silent! call matchdelete(w:long_line_match) <Bar>
+      \   unlet w:long_line_match <Bar>
+      \ elseif &textwidth > 0 <Bar>
+      \   let w:long_line_match = matchadd('OverColLimit', '\%>'.&tw.'v.\+', -1) <Bar>
+      \ else <Bar>
+      \   let w:long_line_match = matchadd('OverColLimit', '\%>80v.\+', -1) <Bar>
+      \ endif<CR>
 "   Remove all trailing whitespace
 map <silent> <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<cr>
 "   Open/close the taglist
