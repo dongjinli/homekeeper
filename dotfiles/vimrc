@@ -85,6 +85,8 @@ nmap ; :
 nmap / /\v
 nmap j gj
 nmap k gk
+nmap J <nop>
+nmap K <nop>
 nmap <tab> %
 nmap <c-n> :bnext<cr>
 nmap <c-p> :bprev<cr>
@@ -94,11 +96,11 @@ nmap <leader>cd :cd %:p:h<cr>
 nmap <leader>d :bd<cr>:syn on<cr>
 nmap <leader>e :set expandtab! list!<cr>
 nmap <leader>g <c-]>
-nmap <leader>h <c-w>h<cr>
+nmap <leader>h <c-w>h
 nmap <leader>i :set list!<cr>
-nmap <leader>j <c-w>j<cr>
-nmap <leader>k <c-w>k<cr>
-nmap <leader>l <c-w>l<cr>
+nmap <leader>j <c-w>j
+nmap <leader>k <c-w>k
+nmap <leader>l <c-w>l
 nmap <leader>n :bnext<cr>
 nmap <leader>p :bprev<cr>
 nmap <leader>r :res<cr>
@@ -117,6 +119,8 @@ vmap / /\v
 vmap j gj
 vmap k gk
 vmap <tab> %
+vmap J <nop>
+vmap K <nop>
 
 " Insert mode mappings (same as inoremap)
 "   When an auto-complete menu is presented, the first item is selected by
