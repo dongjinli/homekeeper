@@ -34,6 +34,7 @@ fi
 
 urxvtd -q -o -f
 xscreensaver -nosplash &
+autocutsel -fork &
 ssh-agent | sed -e '3d' > ~/.ssh/agent
 
 exec /usr/bin/i3
