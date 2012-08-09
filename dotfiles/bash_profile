@@ -2,21 +2,16 @@
 export GIT_EDITOR=vim
 export SVN_EDITOR=vim
 export EDITOR=vim
-export WINE_PREFIX=$HOME/.wine
 
 # Bash
 export PATH=$HOME/bin:$PATH
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
-if [ -e $HOME/.ssh/agent ]; then
-  source $HOME/.ssh/agent
-fi
 
 # For playing videos through ssh
 export DISPLAY=:0
 
 # Colorize prompt and directories
-eval $(dircolors -b $HOME/.dircolors)
 promptcolors
 
 # Show directory in urxvt title bar
