@@ -21,7 +21,7 @@ set indentexpr=
 set infercase
 set laststatus=2
 set lazyredraw
-set listchars=tab:│\ ,trail:·
+"set listchars=tab:|\ ,trail:-
 set modelines=0
 set mouse=
 set nobackup
