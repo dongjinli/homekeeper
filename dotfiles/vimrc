@@ -1,0 +1,19 @@
+filetype off
+call pathogen#infect()
+
+syntax on
+filetype plugin indent on
+colorscheme mango
+
+nmap ; :
+
+set tabstop=2
+set shiftwidth=2
+
+set expandtab
+
+set showmatch
+
+set nohls
+
+set incsearch
